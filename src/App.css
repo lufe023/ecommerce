@@ -31,6 +31,11 @@
     z-index: 1;
 }
 
+
+.logoIMG{
+    width: 35px;
+    margin: 0 20px 0 60px;
+}
 .header ul{
     display: flex;
 }

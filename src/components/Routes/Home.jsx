@@ -7,8 +7,7 @@ import {  cutFavoritesProducts} from '../../store/slices/favoritesProducts.slice
 const Home = () => {
 
     const dispatch = useDispatch()
-    const favorites =useSelector(state => state.favoritesProducts)
-    
+
     useEffect(() => {
     dispatch(getAllProducts())
     }, [])
@@ -19,6 +18,7 @@ const Home = () => {
         dispatch(cutFavoritesProducts(id))
     }
 
+    if(products){
     return (
     <div className='home'>
     
@@ -37,6 +37,20 @@ const Home = () => {
         
         </div>
     )
+    }else{
+        return(
+        <div className='home'>
+    
+          
+        
+<div className='loading__container'>
+<img className='loading' src='./images/loading.gif'/>
+</div>
+    
+        </div>
+
+        )
+    }
 }
 
 export default Home
