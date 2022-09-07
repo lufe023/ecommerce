@@ -6,7 +6,7 @@ const Slider = ({imagenes}) => {
         <button>{'<'} </button>
         {
         imagenes.map((imagen, index)=>{
-            return <img key={index} src={imagen} alt=""/>
+            return <img key={index} src={imagen} alt="img"/>
         })
         }
         <button>{'>'}</button>

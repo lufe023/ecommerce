@@ -3,7 +3,7 @@ import { getAllProducts } from '../../store/slices/products.slice'
 import { useDispatch, useSelector} from 'react-redux'
 import CardHome from '../home/CardHome'
 import {  cutFavoritesProducts} from '../../store/slices/favoritesProducts.slice.js'
-import Slider from '../slider'
+import Slider from '../slider/'
 
 const Home = () => {
 
