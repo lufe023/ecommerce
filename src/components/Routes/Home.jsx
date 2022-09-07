@@ -3,7 +3,7 @@ import { getAllProducts } from '../../store/slices/products.slice'
 import { useDispatch, useSelector} from 'react-redux'
 import CardHome from '../home/CardHome'
 import {  cutFavoritesProducts} from '../../store/slices/favoritesProducts.slice.js'
-import Slider from '../slider/'
+
 
 const Home = () => {
 
@@ -15,15 +15,11 @@ const Home = () => {
     const deletefromFavorite = (id) => {    
         dispatch(cutFavoritesProducts(id))
     }
-    const mokImagenes =[
-        "https://picsum.photos/id/1020/400",
-        "https://picsum.photos/id/1025/400",
-        "https://picsum.photos/id/1010/400"
-    ]
+ 
     if(products){
     return (
     <div className='home'>
-        <Slider imagenes={mokImagenes}/>
+      
         <div className='home__container__card'>
        
         {
