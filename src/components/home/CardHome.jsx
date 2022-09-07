@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom'
 //import { setFavoritesProducts } from '../../store/slices/favoritesProducts.slice'
 import { useDispatch, useSelector} from 'react-redux'
 import { setFavoritesProducts} from '../../store/slices/favoritesProducts.slice.js'
+import axios from 'axios'
+import getConfig from '../../utils/getConfig.js'
 
 
 
@@ -18,7 +20,17 @@ const CardHome = ({product, deletefromFavorite}) => {
     navigate(`/product/${product.id}`)
   }
 
-const arr = []
+  const handleAddCart = () =>{
+    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+    const obj = {
+      "id": product.id,
+      "quantity": 1
+  }
+    axios.post(URL, obj, getConfig())
+    .then(res =>console.log(res.data))
+    .catch(err =>console.log(err))
+  }
+
     const addToFavorite =() =>{
   dispatch(setFavoritesProducts(product.id))
     }
@@ -41,7 +53,7 @@ const handleDelete = () => {
           <h4 className='card-home__price-label'>Price</h4>
           <span className='card-home__price-value'>{product.price}</span>
         </section>
-        <button className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
+        <button onClick={handleAddCart} className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
       </div>
         <div className='card-home__footer'>
         {
