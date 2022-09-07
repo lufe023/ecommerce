@@ -1,0 +1,64 @@
+.Carousel-Container{
+    margin-top: 100px;
+    width: 100%;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+/* *{
+    border: 1px solid red;
+} */
+.slider__content{
+    width: 80%;
+    z-index: 1;
+    padding: 5px;
+}
+
+.slideWraper{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.slider_img_container{
+width: 40%;
+margin: 30px;
+}
+.sliderimg{
+    height: 300px;
+    object-fit: contain;
+    cursor:grab;
+}
+.sliderimg:active{
+cursor:grabbing;
+}
+
+.slide_title{
+    margin: 10px 0px;
+    display:block;
+}
+.slide__detail{
+    width: 40%;
+    cursor:grab;
+    text-align: justify;
+}
+.slide__detail:active{
+    cursor:grabbing;
+}
+
+.carousel-prev::before {
+    background-image: url(https://img.icons8.com/cotton/344/circled-left--v2.png);
+    scale: 2;
+}
+
+.carousel-next::before{
+    scale: 2;
+    rotate: 180deg;
+    background-image: url(https://img.icons8.com/cotton/344/circled-left--v2.png);
+}
