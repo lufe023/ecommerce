@@ -5,17 +5,24 @@ import getConfig from '../../utils/getConfig'
 import './Cart.css'
 const Cart = () => {
     const [cartProducts, setCartProducts] = useState()
-
+    const [totalPrice, setTotalPrice] = useState()
 const getAllProductsCart = () =>{
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
     axios.get(URL, getConfig())
-    .then(res => setCartProducts(res.data.data.cart.products))
+    .then(res => {
+        const products = res.data.data.cart.products
+        setCartProducts(res.data.data.cart.products)
+        const total = products.reduce((acc, cv)=>{
+            return Number(cv.price) * cv.productsInCart.quantity + acc
+        }, 0)
+        setTotalPrice(new Intl.NumberFormat('es-MX').format(total))
+    })
     .catch(err=>console.log(err))
 }
     useEffect(() => {
         getAllProductsCart()
     }, [])
-    
+  
 const handleCheckout = () =>{
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/purchases'
  const obj = {
@@ -35,11 +42,6 @@ axios.post(URL, obj, getConfig())
 }
 
 
-let total=0
-for (let i =0; i<cartProducts?.length; i++){
-    total += Number(cartProducts[i]?.price)
-}
-total = new Intl.NumberFormat().format( total )
 
 return (
     <div className='Cart__container'>
@@ -56,7 +58,7 @@ return (
        }
         <hr className='cart__hr'/>
         <footer className='cart__footer'>
-            <span className='cart__total-global-label'>Total:{total}</span>
+            <span className='cart__total-global-label'>Total:{totalPrice}</span>
             <button className='checkout' onClick={handleCheckout}>Checkout</button>
         </footer>
     </section>
