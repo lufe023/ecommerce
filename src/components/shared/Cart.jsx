@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import ProductCartInfo from '../cart/ProductCartInfo'
 import getConfig from '../../utils/getConfig'
-
+import './Cart.css'
 const Cart = () => {
     const [cartProducts, setCartProducts] = useState()
 
@@ -34,7 +34,15 @@ axios.post(URL, obj, getConfig())
 .catch(err=>console.log(err))
 }
 
+
+let total=0
+for (let i =0; i<cartProducts?.length; i++){
+    total += Number(cartProducts[i]?.price)
+}
+total = new Intl.NumberFormat().format( total )
+
 return (
+    <div className='Cart__container'>
     <section className='cart'>
        <h2 className='cart__title'>Cart</h2>
        {
@@ -48,11 +56,11 @@ return (
        }
         <hr className='cart__hr'/>
         <footer className='cart__footer'>
-            <span className='cart__total-global-label'>Total:</span>
-            <p className='cart__total-global-value'>----</p>
-            <button onClick={handleCheckout} className='cart_btn'>Checkout</button>
+            <span className='cart__total-global-label'>Total:{total}</span>
+            <button className='checkout' onClick={handleCheckout}>Checkout</button>
         </footer>
     </section>
+    </div>
 )
 }
 
