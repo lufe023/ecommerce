@@ -19,47 +19,6 @@
     font-family: 'Yantramanav', sans-serif;
 }
 
-.header{
-    width: 100%;
-    background-color:#fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: fixed;
-    padding: 10px 20px;
-    box-shadow: var(--shadow);
-    z-index: 2;
-}
-
-
-.logoIMG{
-    width: 35px;
-    margin: 0 20px 0 60px;
-}
-.header ul{
-    display: flex;
-}
-
-.header h1{
-
-color: black;
-}
-.active-link{
-    border-bottom: 2px solid var(--btn-prmary-color);
-    background-color: var(--btn-prmary-color);
-}
-
-.header ul li a {
-    display: flex;
-    padding: 10px 20px;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-}
-
-.header ul li a:hover {
-
-    border-bottom: 2px solid var(--btn-prmary-color);
-}
 .containerComponents{
 width: 100%;
 padding: 50px 20px;
@@ -103,7 +62,7 @@ height: 90vh;
     width: 100%;
     margin-top: 100px;
     padding: 30px 50px;
-    justify-content: flex-start;
+    justify-content: center;
 
 }
 
@@ -272,27 +231,6 @@ color: gray;
 .cart{
     margin-top: 100px;
 }
-.card-container-similar-products{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-}
-
-.card-container-similar-products .card-home{
-    background-color: white;
-}
-.container-similar-products{
-    padding: 50px;
-    background-color: #1A7A6E;
-}
-.similar-products-Title{
-    font-size: 40px;
-    color: white;
-    display: block;
-    width: 100%;
-    padding: 20px;
-}
 
 .secction_name{
     width: 100%;
@@ -316,4 +254,10 @@ color: gray;
 
 .containerComponents{
     margin-top: 100px;
+}
+
+@media(max-width:850px) {
+    .containerComponents{
+        padding: 0px;
+    }
 }

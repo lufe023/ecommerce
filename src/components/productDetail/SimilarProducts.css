@@ -1,0 +1,29 @@
+
+.card-container-similar-products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.card-container-similar-products .card-home{
+    background-color: white;
+    min-width: 250px;
+    display: inline-block;
+}
+.container-similar-products{
+    padding: 50px;
+    background-color: #1A7A6E;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+}
+.similar-products-Title{
+    font-size: 40px;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
