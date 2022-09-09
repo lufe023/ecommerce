@@ -9,6 +9,7 @@
     padding: 10px 20px;
     box-shadow: var(--shadow);
     z-index: 2;
+    height: 10vh;
 }
 
 

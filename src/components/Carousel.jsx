@@ -1,8 +1,14 @@
 import React from 'react'
 import Slider from 'infinite-react-carousel'
 import './Carousel.css'
+import { HashLink, NavHashLink } from 'react-router-hash-link';
+
 const Carousel = ({products}) => {
-   
+   console.log(products)
+
+  
+
+
   return (
     <section className='Carousel-Container'>
         <Slider className='slider__content'>
@@ -16,19 +22,33 @@ const Carousel = ({products}) => {
 
                     <div className='slide__detail'>
                         <h2 className='slide_title'>{product.title}</h2>
-                        <div className='slide__detail_text'>
-                            {
-                                product.description
+                        <p>
+                        {
+                                product.description.substring(0, 50)
                             }
-                        </div>
+                            </p>
+                            <h4>
+                            <HashLink smooth to={'/#category'}>
+                            {product.category.name}
+                             </HashLink>
+                            </h4>
                     </div>
+                    <ul className='slide__detail_text'>
+                        
+                        {
+                        product.productImgs.map(img =>(
+                            <li  className='imgsSlider' key={img}><img src={img} /></li>
+                        ))
+                        }                       
+                        </ul>
                     </div>
                     
                 </article>)
             }
         </Slider>
+        <div></div>
     </section>
-  )
+)
 }
 
 export default Carousel

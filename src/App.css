@@ -9,6 +9,11 @@
 
     --text-gray: #ababab;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
 *{
     padding: 0;
@@ -261,3 +266,4 @@ color: gray;
         padding: 0px;
     }
 }
+

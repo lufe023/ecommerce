@@ -37,6 +37,7 @@ dispatch(getAllProducts())
             ))
         }
         </ul>
+     
     </div>
   )
 }

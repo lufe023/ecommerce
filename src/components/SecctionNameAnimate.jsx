@@ -3,7 +3,7 @@ import './Animate.css'
 const SecctionNameAnimate = () => {
   return (
         
-<div className="Iam">
+<div className="Iam"  id='category'>
 <p>Products you'll </p>
 <b>
   <div className="innerIam">
