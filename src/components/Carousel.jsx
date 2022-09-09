@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from 'infinite-react-carousel'
 import './Carousel.css'
 const Carousel = ({products}) => {
-    console.log(products)
+   
   return (
     <section className='Carousel-Container'>
         <Slider className='slider__content'>

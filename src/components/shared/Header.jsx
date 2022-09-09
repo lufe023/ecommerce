@@ -15,7 +15,7 @@ const Header = () => {
      
       <nav className="header__nav">
       <input type='checkbox' id="check"/>
-        <label for='check' className="checkbtn">
+        <label htmlFor='check' className="checkbtn">
         <i className="fa-solid fa-bars"></i>
       </label>
       

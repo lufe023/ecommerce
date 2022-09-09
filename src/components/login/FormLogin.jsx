@@ -13,7 +13,6 @@ const FormLogin = () => {
         console.log(res.data)
         localStorage.setItem('token',res.data.data.token)
         setError()
-
     }
         )
         .catch(err => setError(err.response.data.message))
@@ -52,6 +51,7 @@ const FormLogin = () => {
           />
         </div>
         <button className='login__btn'>Login</button>
+        
       </form>
       </div>
     );

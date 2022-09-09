@@ -38,7 +38,7 @@ let index = favorites.indexOf(product.id)
 const handleDelete = () => {
   deletefromFavorite(index)
 }
-//console.log(product)
+
   return (
     <article className='card-home'>
       <header className='card-home__header'>

@@ -1,5 +1,5 @@
 .Carousel-Container{
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;
     z-index: 0;
     display: flex;
@@ -61,4 +61,18 @@ cursor:grabbing;
     scale: 2;
     rotate: 180deg;
     background-image: url(https://img.icons8.com/cotton/344/circled-left--v2.png);
+}
+
+@media(max-width:850px) {
+    .slider__content{
+        width: 100%;
+    }
+    .slideWraper{
+        width: 100%;
+    }
+    .slide__detail{
+        width: 100%;
+        margin: 0px 80px;
+        padding: 0px;
+    }
 }
