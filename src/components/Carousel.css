@@ -107,9 +107,10 @@ cursor:grabbing;
 
 .visor{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.628);
     width: 100%;
-    height: 100%;
+    height: 90vh;
+    top: 10vh;
     z-index: 1;
     display: flex;
     justify-content: center;
