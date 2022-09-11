@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from 'infinite-react-carousel'
 import './Carousel.css'
 import { HashLink, NavHashLink } from 'react-router-hash-link';
@@ -6,11 +6,43 @@ import { HashLink, NavHashLink } from 'react-router-hash-link';
 const Carousel = ({products}) => {
    console.log(products)
 
-  
+  const [showImg, setShowImg] = useState([false,0])
 
+  const handleShow = e => {
+    setShowImg([true, e])
+  } 
 
+  const handleDontShow = e =>{
+    e.stopPropagation()
+    setShowImg([false,0])
+ 
+}
+const show = {
+    backgroundColor: ''
+}
+
+const dontShow = {
+    display: 'none',
+    backgroundColor: ''
+}
+  console.log(showImg)
+
+const blur = {
+    filter: 'blur(10px)',
+    transition: 'filter 100ms ease'
+}
+
+const noBlur = {
+    filter: 'blur(0px)',
+    transition: 'filter 100ms ease'
+}
   return (
-    <section className='Carousel-Container'>
+    <div>
+        <div className='visor' style={showImg[0]==true? show : dontShow} onClick={handleDontShow}>
+        <p onClick={handleDontShow} className='close'><i className="fa-solid fa-xmark"></i></p>
+        <img className='visor__img' src={showImg[1]}/>
+        </div>
+    <section className='Carousel-Container' style={showImg[0]==true? blur: noBlur} >
         <Slider className='slider__content'>
             {
                 products?.map(product => 
@@ -30,14 +62,17 @@ const Carousel = ({products}) => {
                             <h4>
                             <HashLink smooth to={'/#category'}>
                             {product.category.name}
-                             </HashLink>
+                            </HashLink>
                             </h4>
                     </div>
                     <ul className='slide__detail_text'>
                         
                         {
                         product.productImgs.map(img =>(
-                            <li  className='imgsSlider' key={img}><img src={img} /></li>
+                            <li onClick={()=>handleShow(img)} className='imgsSlider' key={img}>
+                            
+                                
+                                <img src={img} /></li>
                         ))
                         }                       
                         </ul>
@@ -48,6 +83,7 @@ const Carousel = ({products}) => {
         </Slider>
         <div></div>
     </section>
+    </div>
 )
 }
 

@@ -10,6 +10,8 @@
     box-shadow: var(--shadow);
     z-index: 2;
     height: 10vh;
+    min-height: 70px;
+align-items: center;
 }
 
 
@@ -85,6 +87,7 @@ display: none;
         left: 0px;
         top: 65px;
         transition: margin 300ms ease;
+        overflow: scroll;
      }   
      .header__list{
         display: none;
