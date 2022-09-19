@@ -66,11 +66,11 @@ display: none;
         }
        
         
-    ul{
+    .header__list{
         display: none;
         }
 
-        ul li{
+        .header__list li{
             display: none;
             }
 

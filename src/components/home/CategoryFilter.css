@@ -1,0 +1,14 @@
+.category-filter-container{
+    min-width: 300px;
+    width: 40%;
+    margin-right:20px ;
+    padding: 5px;
+}
+
+.category-filter-list{
+    width: 100%;
+    margin: 10px 0px;
+    text-align: center;
+    box-sizing: border-box;
+    
+    }

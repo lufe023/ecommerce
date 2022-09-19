@@ -1,0 +1,9 @@
+.filters{
+    width: 90%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.39);
+    padding: 10px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

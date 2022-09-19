@@ -3,10 +3,10 @@ import './Animate.css'
 const SecctionNameAnimate = () => {
   return (
         
-<div className="Iam"  id='category'>
+<div className="Iam">
 <p>Products you'll </p>
 <b>
-  <div className="innerIam">
+  <div className="innerIam"   id='category'>
     love<br /> 
     like<br />
     buy<br />
@@ -14,7 +14,6 @@ const SecctionNameAnimate = () => {
     gif
     </div>
 </b>
-
 </div>
   )
 }

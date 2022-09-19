@@ -38,7 +38,7 @@ const FormLogin = () => {
             type="email" 
             id="email" 
             placeholder="Type your email"
-          />
+            required/>
         </div>
         <div className='login__div-password'>
           <label className='login__label' htmlFor="password">Password</label>
@@ -48,6 +48,7 @@ const FormLogin = () => {
               type="password" 
               id="password" 
               placeholder="Type your password"
+              required
           />
         </div>
         <button className='login__btn'>Login</button>

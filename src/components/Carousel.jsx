@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from 'infinite-react-carousel'
 import './Carousel.css'
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 
 const Carousel = ({products}) => {
-   console.log(products)
 
   const [showImg, setShowImg] = useState([false,0])
 
   const handleShow = e => {
+   
     setShowImg([true, e])
   } 
 
   const handleDontShow = e =>{
     e.stopPropagation()
     setShowImg([false,0])
- 
+
 }
 const show = {
     backgroundColor: ''
@@ -25,7 +25,6 @@ const dontShow = {
     display: 'none',
     backgroundColor: ''
 }
-  console.log(showImg)
 
 const blur = {
     filter: 'blur(10px)',
@@ -49,7 +48,7 @@ const noBlur = {
                 <article key={product.id} className='Slider__Content-item'>
                     <div className='slideWraper'>
                     <div className='slider_img_container'>
-                        <img className='sliderimg' src={product.productImgs[0]}/>
+                        <img className='sliderimg' src={product.productImgs[0]} onClick={()=>handleShow(product.productImgs[0])}/>
                     </div>
 
                     <div className='slide__detail'>

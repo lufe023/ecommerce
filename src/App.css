@@ -65,11 +65,18 @@ height: 90vh;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 100px;
-    padding: 30px 50px;
+    padding: 0px 50px;
     justify-content: center;
-
 }
+.favorite__container__card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0px 50px;
+    margin-top: 80px;
+    justify-content: center;
+}
+
 
 .card-home__header{
     height: 200px;
@@ -101,7 +108,9 @@ img{
 
 }
 
-
+.input{
+    height: 30px;
+}
 .card-home:hover{
     margin-top: -5px;
 

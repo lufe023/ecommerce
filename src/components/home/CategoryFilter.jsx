@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllProducts, getProductsByCategory } from '../../store/slices/products.slice'
+import './CategoryFilter.css'
 
 const CategoryFilter = () => {
 
@@ -14,12 +15,19 @@ const CategoryFilter = () => {
      .catch(err => console.log(err))
     }, [])
     
-console.log(categories)
+
 
 const dispatch = useDispatch()
 
-const handleClickCategory = id => {
-    dispatch(getProductsByCategory(id))
+const handleClickCategory = categoryForm => {
+    let category = categoryForm.target.value
+
+    if(category!=='All'){
+    dispatch(getProductsByCategory(category))
+    }else{
+        dispatch(getAllProducts())  
+    }
+
 } 
 
 const handleClickAllProducts = () => {
@@ -27,16 +35,18 @@ dispatch(getAllProducts())
 }
 
   return (
-    <div>
+    <div className='category-filter-container'>
         <h3>Category</h3>
-        <ul>
-            <li onClick={handleClickAllProducts} >All Category</li>
+
+        <select className='input category-filter-list' onChange={handleClickCategory}>
+            <option value='All'>All Category</option>
             {
             categories?.map(category => (
-                <li onClick={() => handleClickCategory(category.id)} key={category.id}>{category.name}</li>
+                <option value={category.id} key={category.id}>{category.name}</option>
             ))
         }
-        </ul>
+        </select>
+       
      
     </div>
   )

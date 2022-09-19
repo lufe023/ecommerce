@@ -33,18 +33,18 @@ if(favorite.length==0){
   
   return (
     <div>
-    <div className='home__container__card'>
+    <div className='favorite__container__card'>
     <article className='card-wish'>
       <h1>Wish list</h1>
       <ul>
     {
-      favorite.map(fav=>(
+      favorite?.map(fav=>(
         <li className='wish-list-item' key={fav-1}> {products[fav-1].title}</li>
       ))
     }
 </ul>
       </article>
-      {favorite.map(fav=>(
+      {favorite?.map(fav=>(
         <article key={fav} className='card-home'>
         <header className='card-home__header'>
         <img  onClick={() => handleClick(fav)} className='card-home__img' src={products[fav-1].productImgs[0]} alt=''/>

@@ -1,0 +1,32 @@
+.priceFilter-form{
+    min-width: 300px;
+    width: 40%;
+    margin-right:20px ;
+    padding: 5px;
+}
+.price-filter-list{
+display: flex;
+justify-content: space-between;
+}
+.price-filter-list li{
+width: 45%;
+margin: 10px 0px;
+text-align: center;
+box-sizing: border-box;
+
+}
+
+.filter-price-btn{
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    cursor: pointer;
+    background-color: #30e3ca;
+}
+.filter-price-btn:hover{
+    box-shadow: 0 0 2px #000;
+}
+
+.input-price{
+    width: 100%;
+}

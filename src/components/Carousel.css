@@ -48,10 +48,10 @@ margin: 30px;
 .sliderimg{
     width: 100%;
     object-fit: contain;
-    cursor:grab;
+    cursor:zoom-in;
 }
 .sliderimg:active{
-cursor:grabbing;
+cursor:alias;
 }
 
 .slide_title{
@@ -90,8 +90,11 @@ cursor:grabbing;
     object-fit: contain;
     margin: 0 20px;
     display: inline-block;
-}
 
+}
+.imgsSlider img{
+    cursor: zoom-in;
+}
 .close{
     position: absolute;
     top: 50px;
@@ -103,8 +106,6 @@ cursor:grabbing;
     cursor: pointer;
 }
 
-
-
 .visor{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.628);
@@ -115,11 +116,13 @@ cursor:grabbing;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: zoom-out;
 }
 .visor__img{
     width: 50%;
     height: 50%;
     object-fit: contain;
+    cursor: zoom-out;
 }
 @media(max-width:850px) {
     .slider__content{

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { getAllProducts } from '../../store/slices/products.slice'
 import { useDispatch, useSelector} from 'react-redux'
 import CardHome from '../home/CardHome'
 import {  cutFavoritesProducts} from '../../store/slices/favoritesProducts.slice.js'
@@ -8,8 +7,7 @@ import SecctionNameAnimate from '../SecctionNameAnimate'
 import InputSearch from '../home/InputSearch'
 import CategoryFilter from '../home/CategoryFilter'
 import PriceFilter from '../home/PriceFilter'
-
-
+import './Home.css'
 
 const Home = () => {
 
@@ -20,73 +18,60 @@ const Home = () => {
 
     const [inputSearch, setInputSearch] = useState('')
     const [filterProducts, setFilterProducts] = useState()
-    const [objFilterPrice, setObjFilterPrice] = useState('')
-    
+    const [objFilterPrice, setObjFilterPrice] = useState({})
+
+
     useEffect(() => {
-        if(inputSearch.length !== 0){
-  const filter = products?.filter(e => e.title.toLowerCase().includes(inputSearch))
-  setFilterProducts(filter)
-}else{
-    setFilterProducts('')
-}
+        if(inputSearch.length !== 0) {
+          const filter = products?.filter(e => e.title.toLowerCase().includes(inputSearch.toLowerCase()))
+          setFilterProducts(filter)
+        } else {
+        setFilterProducts('')
+        }
     }, [inputSearch])
     
-    //filtro por price
-    useEffect(() => {
-    const filter = products?.filter(e => {
+    // Filtro por price
+  useEffect(() => {
+    if(objFilterPrice.to || objFilterPrice.from){
+      const filter = products?.filter(e => {
         const price = Number(e.price)
         const min = objFilterPrice.from
         const max = objFilterPrice.to
+        // Este if es para cuando colocan un valor en los dos lados
         if(min && max){
-        return min <= price && price <= max
-    }else if (min && !max){
-        return min <= price
-    } else if(!min && max){
-        price <= max
-    }else{
-        return true
-    }
-    })
+          return min <= price && price <= max
+          // Este es cuando colocan un valor solo en min
+        } else if(min && !max){
+          return min <= price
+          // Este es cuando colocan un valir solo en max
+        } else if(!min && max){
+          return price <= max
+          // Este es cuando no rellenan ningun input
+        } else {
+          return true
+        }
+      })
       setFilterProducts(filter)
-    }, [objFilterPrice])
+    } else {
+      setFilterProducts('')
+    }
+  }, [objFilterPrice.to, objFilterPrice.from])
     
 
     const deletefromFavorite = (id) => {    
         dispatch(cutFavoritesProducts(id))
     }
- const images =[
-    {
-        id: '1',
-        title:'Awsome Forest',
-        image: 'https://cdn.pixabay.com/photo/2022/09/02/13/35/mountains-7427623_960_720.jpg'
-    },
-    {
-        id: '2',
-        title:'Second Title',
-        image: 'https://cdn.pixabay.com/photo/2022/08/17/04/07/tree-7391504_960_720.jpg'
-    },
-    {
-        id: '3',
-        title:'Third Title',
-        image: 'https://cdn.pixabay.com/photo/2022/08/25/20/34/river-7411236_960_720.jpg'
-    },
-    {
-        id: '4',
-        title:'Forth Title',
-        image: 'https://cdn.pixabay.com/photo/2022/09/01/09/08/road-7425079_960_720.jpg'
-    },
-    {
-        id: '5',
-        title:'Five Title',
-        image: 'https://cdn.pixabay.com/photo/2022/08/19/13/21/dog-7396912_960_720.jpg'
-    }
- ]
+
     if(products){
        
     return (
     <div className='home'>
-    <Carousel products = {products}/>
-       
+         {
+            filterProducts?
+            <Carousel products= {filterProducts}/>
+            :<Carousel products={products}/>
+         }
+    
     <div className='secction_name'>
         <SecctionNameAnimate/>
        <div>
@@ -96,11 +81,12 @@ const Home = () => {
       
     </div>
  
-        <InputSearch  setInputSearch={setInputSearch}/>
+       <div className='filters'>
         <PriceFilter setObjFilterPrice = {setObjFilterPrice}/>
-       <CategoryFilter/>
+        <CategoryFilter/>
+        <InputSearch  setInputSearch={setInputSearch}/>
+        </div>
         <div className='home__container__card'>
-       
         {
             filterProducts?
             filterProducts?.map(product=>(

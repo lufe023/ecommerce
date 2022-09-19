@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './PriceFilter.css'
 const PriceFilter = ({setObjFilterPrice}) => {
 
 const submit = e => {
@@ -13,13 +13,21 @@ const submit = e => {
 }
 
   return (
-    <form onSubmit={submit}>
-        <h3>Price</h3>
-        <ul>
-            <li><label htmlFor="fromPrice"></label><input type="number" id='fromPrice'/></li>
-            <li><label htmlFor="toPrice"></label><input type="number" id='toPrice' /></li>
+    <form className='priceFilter-form' onSubmit={submit}>
+        <h3>Filter by price</h3>
+        <ul className='price-filter-list'>
+            <li>
+              <label className='label-price' htmlFor="fromPrice">
+              <input className='input input-price' type="number" id='fromPrice' placeholder='Min Price'/>
+              </label>
+            </li>
+            <li>
+              <label className='label-price' htmlFor="toPrice">
+                <input className='input input-price' type="number" id='toPrice' placeholder='Max Price' />
+              </label>
+            </li>
         </ul>
-        <button>Filter Price</button>
+        <button className='filter-price-btn'>Filter Price</button>
     </form>
   )
 }
