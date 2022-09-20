@@ -8,6 +8,7 @@ import InputSearch from '../home/InputSearch'
 import CategoryFilter from '../home/CategoryFilter'
 import PriceFilter from '../home/PriceFilter'
 import './Home.css'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
 
@@ -19,7 +20,7 @@ const Home = () => {
     const [inputSearch, setInputSearch] = useState('')
     const [filterProducts, setFilterProducts] = useState()
     const [objFilterPrice, setObjFilterPrice] = useState({})
-
+    const [addToCart, setAddToCart] = useState()
 
     useEffect(() => {
         if(inputSearch.length !== 0) {
@@ -62,10 +63,27 @@ const Home = () => {
         dispatch(cutFavoritesProducts(id))
     }
 
+    const handleCloseMessage = () => {  
+
+      setAddToCart()
+    }
+
     if(products){
        
     return (
     <div className='home'>
+      {
+      addToCart?
+      <div onClick={handleCloseMessage} className='message__container'>
+      <i onClick={handleCloseMessage} className="fa-solid fa-square-xmark closeB"></i>
+        <p className='message'>
+      {addToCart}
+
+      </p>
+     
+      </div>
+      :<div></div>
+    }
          {
             filterProducts?
             <Carousel products= {filterProducts}/>
@@ -93,6 +111,7 @@ const Home = () => {
                 <CardHome key={product.id}
                 product={product}
                 deletefromFavorite={deletefromFavorite}
+                setAddToCart = {setAddToCart}
                 />
                 
             ))
@@ -101,6 +120,7 @@ const Home = () => {
              <CardHome key={product.id}
              product={product}
              deletefromFavorite={deletefromFavorite}
+             setAddToCart = {setAddToCart}
              />
              
          )) 

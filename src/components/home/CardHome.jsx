@@ -7,7 +7,7 @@ import getConfig from '../../utils/getConfig.js'
 
 
 
-const CardHome = ({product, deletefromFavorite}) => {
+const CardHome = ({product, deletefromFavorite, setAddToCart}) => {
   const dispatch = useDispatch()
 
 
@@ -28,7 +28,9 @@ const CardHome = ({product, deletefromFavorite}) => {
   }
     axios.post(URL, obj, getConfig())
     .then(res =>console.log(res.data))
-    .catch(err =>console.log(err))
+    .catch(err =>{
+      setAddToCart(err.response.data.message)
+      console.log(err)})
   }
 
     const addToFavorite =() =>{
