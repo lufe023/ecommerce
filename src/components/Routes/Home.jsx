@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import CardHome from '../home/CardHome'
 import {  cutFavoritesProducts} from '../../store/slices/favoritesProducts.slice.js'
-import Carousel from '../Carousel'
+
 import SecctionNameAnimate from '../SecctionNameAnimate'
 import InputSearch from '../home/InputSearch'
 import CategoryFilter from '../home/CategoryFilter'
 import PriceFilter from '../home/PriceFilter'
 import './Home.css'
-import { NavLink } from 'react-router-dom'
+
 import SimpleSlider from '../SimpleSlider/SimpleSlider'
 import axios from 'axios'
-
 
 const Home = () => {
 
