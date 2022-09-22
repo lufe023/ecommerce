@@ -9,6 +9,9 @@ import CategoryFilter from '../home/CategoryFilter'
 import PriceFilter from '../home/PriceFilter'
 import './Home.css'
 import { NavLink } from 'react-router-dom'
+import SimpleSlider from '../SimpleSlider/SimpleSlider'
+import axios from 'axios'
+
 
 const Home = () => {
 
@@ -21,6 +24,16 @@ const Home = () => {
     const [filterProducts, setFilterProducts] = useState()
     const [objFilterPrice, setObjFilterPrice] = useState({})
     const [addToCart, setAddToCart] = useState()
+    const [categories, setCategories] = useState()
+
+    useEffect(() => {
+     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
+     axios.get(URL)
+     .then(res => (setCategories(res.data.data.categories)))
+     .catch(err => console.log(err))
+    }, [])
+
+
 
     useEffect(() => {
         if(inputSearch.length !== 0) {
@@ -69,7 +82,7 @@ const Home = () => {
     }
 
     if(products){
-       
+
     return (
     <div className='home'>
       {
@@ -80,16 +93,18 @@ const Home = () => {
       {addToCart}
 
       </p>
-     
+
       </div>
       :<div></div>
     }
-         {
+    
+         {/* {
             filterProducts?
             <Carousel products= {filterProducts}/>
             :<Carousel products={products}/>
-         }
-    
+         }  */}
+         
+    <SimpleSlider categories = {categories} />
     <div className='secction_name'>
         <SecctionNameAnimate/>
        <div>
@@ -101,7 +116,7 @@ const Home = () => {
  
        <div className='filters'>
         <PriceFilter setObjFilterPrice = {setObjFilterPrice}/>
-        <CategoryFilter/>
+        <CategoryFilter categories={categories}/>
         <InputSearch  setInputSearch={setInputSearch}/>
         </div>
         <div className='home__container__card'>

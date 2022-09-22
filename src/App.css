@@ -9,7 +9,10 @@
 
     --text-gray: #ababab;
 }
+body{
+    margin-top: 53px;
 
+}
 html {
     scroll-behavior: smooth;
   }
@@ -46,11 +49,15 @@ height: 90vh;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.468);
 }
 .favorite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
     color: #000;
     padding:5px;
     cursor: pointer;
     background-color: #fff;
-
     border-radius: 50%;
     aspect-ratio: 1;
     box-shadow:0 0px 5px rgba(0,0,0,0.3);
@@ -72,8 +79,8 @@ height: 90vh;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0px 50px;
-    margin-top: 80px;
+    padding: 100px 50px;
+
     justify-content: center;
 }
 
@@ -90,8 +97,8 @@ img{
 
 .card-home{
     width: 270px;
-    min-height:500px ;
-    padding: 15px;
+    min-height:400px ;
+    padding: 15px 15px 0px 15px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.50);
     margin: 20px;
     border-radius: 5px;
@@ -213,15 +220,14 @@ color: gray;
     text-align: center;
     aspect-ratio: 1;
     background-color: var(--primary);
-    margin-left: 80%;
     cursor: pointer;
 }
 
 .card-home__footer{
     width: 100%;
-
-    padding: 10px;
-
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -248,11 +254,11 @@ color: gray;
 
 .secction_name{
     width: 100%;
-    margin: auto;
+
     background-color: #1A7A6E;
     height: 200px;
     padding: 20px 100px;
-    margin-top: 30px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -263,12 +269,9 @@ color: gray;
 .gif{
     font-size: 50px;
     opacity: 0.3;
- 
 }
 
-.containerComponents{
-    margin-top: 100px;
-}
+
 
 @media(max-width:850px) {
     .containerComponents{

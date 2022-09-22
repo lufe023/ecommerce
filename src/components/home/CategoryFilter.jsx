@@ -4,16 +4,9 @@ import { useDispatch } from 'react-redux'
 import { getAllProducts, getProductsByCategory } from '../../store/slices/products.slice'
 import './CategoryFilter.css'
 
-const CategoryFilter = () => {
+const CategoryFilter = ({categories}) => {
 
-    const [categories, setCategories] = useState()
 
-    useEffect(() => {
-     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
-     axios.get(URL)
-     .then(res => (setCategories(res.data.data.categories)))
-     .catch(err => console.log(err))
-    }, [])
     
 
 

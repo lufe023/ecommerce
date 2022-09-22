@@ -58,9 +58,10 @@ if(favorite.length==0){
           <h4 className='card-home__price-label'>Price</h4>
           <span className='card-home__price-value'>{products[fav-1].price}</span>
         </section>
-        <button className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
+        <div className='card-home__footer'>
         <i onClick={() => deleteting(fav)} className="fa-solid fa-heart-circle-minus favorite favorite-selected"></i>
-        
+        <button className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
+      </div>
       </div>
         </article>
       

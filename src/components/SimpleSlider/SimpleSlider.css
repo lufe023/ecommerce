@@ -1,0 +1,105 @@
+
+.Simple-Slider{
+    width: 100%;
+    padding: 0;
+    margin-top: 53px;
+    height: 95vh;
+    display: flex;
+}
+.S-boton{
+    z-index: 1;
+    position: absolute;
+    margin: auto 0px;
+    background-color: #30e3ca;
+    width: 40px;
+    height: 40px;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.S-botonA{
+    top: 50%;
+    left: 10px;
+}
+.S-botonB{
+    top: 50%;
+    right: 10px;
+}
+
+.S-Container{
+    pointer-events: fill;
+width: 100%;
+justify-content: space-between;
+display: flex;
+scroll-snap-type:x mandatory;
+overflow: auto;
+flex: none;
+column-gap: 0px;
+scroll-behavior: smooth;
+
+}
+
+.S-Container::-webkit-scrollbar {
+    display: none;
+    height: 15px;
+    background-color: #0c5047;
+    width: 0px;
+}
+
+.S-Container::-webkit-scrollbar-thumb {
+    background: #30e3ca;
+  }
+
+.S-wrap{
+width: 300px;
+height: 200px;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+background-color: #0a443ca1;
+line-height: 30px;
+transition: transform 200ms ease-in-out;
+backdrop-filter: blur(2px);
+}
+.S-wrap:hover{
+    transform: scale(1.1);
+}
+
+
+.S-Card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-color: #000;
+height: 100%;
+color: white;
+scroll-snap-align: center;
+flex: none;
+width: 100%;
+height: 100%;
+padding: 40px;
+background-attachment:fixed;
+background-size: cover;
+}
+.S-card-title{
+    color: white;
+}
+.S-Card:nth-child(1){
+    background-image: url("https://wallpaper.dog/large/20509023.jpg");
+}
+.S-Card:nth-child(3){
+    background-image: url("https://cdn.shopify.com/s/files/1/0259/0484/0781/articles/como-crear-fondos-de-pantalla-para-celular_ea8b4726-04e9-4997-b7b2-92a003e037d3_1200x1200_crop_center.jpg?v=1635226408");
+}
+
+
+.S-Card:nth-child(2){
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2020/03/27/macbook-touchbar-wallpaper.jpg");
+}
+
+
+.slide_title{
+    filter: drop-shadow(0 0 2px #000);
+}

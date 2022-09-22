@@ -122,6 +122,7 @@
 
 .signUp__form{
     width: 50%;
+    max-width: 600px;
     min-height: 500px;
     background-color:#EAEDED ;
     padding: 20px;

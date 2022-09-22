@@ -55,7 +55,6 @@ const handleDelete = () => {
           <h4 className='card-home__price-label'>Price</h4>
           <span className='card-home__price-value'>{product.price}</span>
         </section>
-        <button onClick={handleAddCart} className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
       </div>
         <div className='card-home__footer'>
         {
@@ -63,6 +62,7 @@ const handleDelete = () => {
         ?<i onClick={handleDelete} className="fa-solid fa-heart-circle-minus favorite favorite-selected"></i>
         : <i onClick={addToFavorite} className="fa-solid fa-heart-circle-plus favorite"></i>
         }
+        <button onClick={handleAddCart} className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
         </div>
     </article>
   )
