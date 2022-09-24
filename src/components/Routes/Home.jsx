@@ -136,7 +136,6 @@ const Home = () => {
              deletefromFavorite={deletefromFavorite}
              setAddToCart = {setAddToCart}
              />
-             
          )) 
         }
 
@@ -147,8 +146,6 @@ const Home = () => {
     }else{
         return(
         <div className='home'>
-    
-        
 <div className='loading__container'>
 <img className='loading' src='./images/loading.gif'/>
 </div>

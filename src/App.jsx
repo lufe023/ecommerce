@@ -12,6 +12,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import ProtectedRoutes from './components/Routes/ProtectedRoutes'
 import { useEffect } from 'react'
 import { getAllProducts } from './store/slices/products.slice'
+import Footer from './Footer'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
     </Route>
     </Routes>
+    <Footer/>
     </div>
   )
 }
