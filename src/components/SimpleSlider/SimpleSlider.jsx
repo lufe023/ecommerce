@@ -35,11 +35,11 @@ const SimpleSlider = ({categories}) => {
     }
     }
 
- 
+
 
     
 
-  return (
+    return (
     <div className='Simple-Slider'>
         <button onClick={minusHandleClick} className='S-boton S-botonA' id='boton'><i className="fa-solid fa-arrow-left"></i></button>
             <div className='S-Container ' id='S-Container'>
@@ -56,7 +56,7 @@ const SimpleSlider = ({categories}) => {
         </div>
         <button onClick={plusHandleClick} className='S-boton S-botonB' id='boton'><i className="fa-solid fa-arrow-right"></i></button>
     </div>
-  )
+)
 }
 
 export default SimpleSlider

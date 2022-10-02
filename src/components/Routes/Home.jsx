@@ -97,12 +97,6 @@ const Home = () => {
       :<div></div>
     }
     
-         {/* {
-            filterProducts?
-            <Carousel products= {filterProducts}/>
-            :<Carousel products={products}/>
-         }  */}
-         
     <SimpleSlider categories = {categories} />
     <div className='secction_name'>
         <SecctionNameAnimate/>
@@ -113,7 +107,7 @@ const Home = () => {
       
     </div>
  
-       <div className='filters'>
+      <div className='filters'>
         <PriceFilter setObjFilterPrice = {setObjFilterPrice}/>
         <CategoryFilter categories={categories}/>
         <InputSearch  setInputSearch={setInputSearch}/>
@@ -138,7 +132,6 @@ const Home = () => {
              />
          )) 
         }
-
         </div>
         
         </div>
