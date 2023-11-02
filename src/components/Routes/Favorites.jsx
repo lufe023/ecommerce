@@ -37,14 +37,55 @@ if(favorite.length==0){
     <article className='card-wish'>
       <h1>Wish list</h1>
       <ul>
-    {
+    {/* {
       favorite?.map(fav=>(
-        <li className='wish-list-item' key={fav-1}> {products[fav-1].title}</li>
+        <li className='wish-list-item'> 
+        {products[fav-1].title}
+        
+        </li>
       ))
-    }
+    } */}
+
+{
+    products?.map(product=>
+      favorite.includes(product.id)?
+      <li className='wish-list-item'>{product.title}</li>
+      :""
+    )
+  }
+
+
 </ul>
       </article>
-      {favorite?.map(fav=>(
+      {
+    products?.map(product=>
+      favorite.includes(product.id)?
+      <article key={product.id} className='card-home'>
+  <header className='card-home__header'>
+        <img  onClick={() => handleClick(product.id)} className='card-home__img' src={product.productImgs[0]} alt=''/>
+
+      </header>
+
+      <div className='car-home__body'>
+        <h3 onClick={() => handleClick(product.id)} id='title' className='card-home__name'>{product.title}</h3>
+        <div className='card-home__description'>
+        {`${product.description.substring(0,50)}...`}
+        </div>
+        <section className='card-home__price'>
+          <h4 className='card-home__price-label'>Price</h4>
+          <span className='card-home__price-value'>{product.price}</span>
+        </section>
+        <div className='card-home__footer'>
+        <i onClick={() => deleteting(product.id)} className="fa-solid fa-heart-circle-minus favorite favorite-selected"></i>
+        <button className='card-home__btn'><i className="fa-solid fa-cart-plus"></i></button>
+      </div>
+      </div>
+      </article>
+      :""
+    )
+  }
+
+      {/* {favorite?.map(fav=>(
         <article key={fav} className='card-home'>
         <header className='card-home__header'>
         <img  onClick={() => handleClick(fav)} className='card-home__img' src={products[fav-1].productImgs[0]} alt=''/>
@@ -65,7 +106,8 @@ if(favorite.length==0){
       </div>
         </article>
       
-    ))}</div>
+    ))} */}    
+    </div>
     </div>
   )
 }

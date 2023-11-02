@@ -21,7 +21,7 @@ const CardHome = ({product, deletefromFavorite, setAddToCart}) => {
   }
 
   const handleAddCart = () =>{
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+    const URL = 'https://e-commerce-api.academlo.tech/api/v1/cart'
     const obj = {
       "id": product.id,
       "quantity": 1

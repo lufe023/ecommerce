@@ -88,17 +88,18 @@ background-size: cover;
     color: white;
 }
 .S-Card:nth-child(1){
+    background-image: url("https://www.thespruce.com/thmb/Z1FJ_SXVHSS12fC1CgRh4nu_cjA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/R15181_Rebel-Walls-9-image2-a92d2e8505b644eda2848fd38eb3abb3.jpg");
+}
+.S-Card:nth-child(2){
     background-image: url("https://wallpaper.dog/large/20509023.jpg");
 }
+
 .S-Card:nth-child(3){
     background-image: url("https://cdn.shopify.com/s/files/1/0259/0484/0781/articles/como-crear-fondos-de-pantalla-para-celular_ea8b4726-04e9-4997-b7b2-92a003e037d3_1200x1200_crop_center.jpg?v=1635226408");
 }
-
-
-.S-Card:nth-child(2){
+.S-Card:nth-child(4){
     background-image: url("https://free4kwallpapers.com/uploads/originals/2020/03/27/macbook-touchbar-wallpaper.jpg");
 }
-
 
 .slide_title{
     filter: drop-shadow(0 0 2px #000);

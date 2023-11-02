@@ -12,7 +12,7 @@ const [signUp, setSignUp] = useState(true)
 
         const submit = data => {
 
-        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users/login'
+        const URL = 'https://e-commerce-api.academlo.tech/api/v1/users/login'
         axios.post(URL, data)
 
         .then(res =>
@@ -35,7 +35,7 @@ const [signUp, setSignUp] = useState(true)
     }
 
     const createUser = data => {
-        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+        const URL = 'https://e-commerce-api.academlo.tech/api/v1/users'
         axios.post(URL, data)
 
         .then(res =>

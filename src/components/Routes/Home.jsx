@@ -26,7 +26,7 @@ const Home = () => {
     const [categories, setCategories] = useState()
 
     useEffect(() => {
-     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products/categories'
+     const URL = 'https://e-commerce-api.academlo.tech/api/v1/products/categories'
      axios.get(URL)
      .then(res => (setCategories(res.data.data.categories)))
      .catch(err => console.log(err))

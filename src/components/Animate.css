@@ -24,11 +24,11 @@
   
   
   /*animation*/
-  -webkit-animation:move 5s;
-     -moz-animation:move 5s;
-      -ms-animation:move 5s;
-       -o-animation:move 5s;
-          animation:move 5s;
+  -webkit-animation:move 10s;
+     -moz-animation:move 10s;
+      -ms-animation:move 10s;
+       -o-animation:move 10s;
+          animation:move 10s;
   /*animation-iteration-count*/
   -webkit-animation-iteration-count:infinite;
      -moz-animation-iteration-count:infinite;
@@ -44,12 +44,12 @@
   }
   @keyframes move{
   0%  { top: 0px; }
-  20% { top: -50px; }
-  40% { top: -100px; }
-  60% { top: -150px; }
-  80% { top: -200px; }
+  20% { top: -60px; }
+  40% { top: -120px; }
+  60% { top: -180px; }
+  80% { top: -240px; }
   }
-  
+/*   
   @-webkit-keyframes move {
       0%  { top: 0px; }
       20% { top: -50px; }
@@ -77,4 +77,4 @@
       40% { top: -100px; }
       60% { top: -150px; }
       80% { top: -200px; }
-  }
+  } */
